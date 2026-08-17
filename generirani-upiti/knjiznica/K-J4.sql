@@ -1,3 +1,3 @@
-"SELECT *
+SELECT *
 FROM ZAPOSLENIK
-WHERE RADNO_MJESTO = 'knjižničar';"
+WHERE RADNO_MJESTO = 'knjižničar';
