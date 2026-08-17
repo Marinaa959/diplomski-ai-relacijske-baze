@@ -1,0 +1,3 @@
+SELECT *
+FROM SALA
+WHERE TIP_SALE = 'ortopedska';
