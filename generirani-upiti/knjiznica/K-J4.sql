@@ -1,0 +1,3 @@
+"SELECT *
+FROM ZAPOSLENIK
+WHERE RADNO_MJESTO = 'knjižničar';"
