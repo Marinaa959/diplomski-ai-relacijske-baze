@@ -1,0 +1,40 @@
+WITH broj_posudbi AS (
+SELECT
+YEAR(p.DATUM_POSUDBE) AS godina,
+MONTH(p.DATUM_POSUDBE) AS mjesec,
+p.ID_ZAPOSLENIKA,
+COUNT(*) AS broj_posudbi
+FROM POSUDBA AS p
+WHERE p.DATUM_POSUDBE >= '2026-01-01'
+AND p.DATUM_POSUDBE < '2027-01-01'
+GROUP BY
+YEAR(p.DATUM_POSUDBE),
+MONTH(p.DATUM_POSUDBE),
+p.ID_ZAPOSLENIKA
+),
+rangirano AS (
+SELECT
+bp.*,
+DENSE_RANK() OVER (
+PARTITION BY bp.godina, bp.mjesec
+ORDER BY bp.broj_posudbi DESC
+) AS rang
+FROM broj_posudbi AS bp
+)
+SELECT
+r.godina,
+r.mjesec,
+z.ID_ZAPOSLENIKA,
+z.OIB,
+z.IME,
+z.PREZIME,
+z.RADNO_MJESTO,
+r.broj_posudbi
+FROM rangirano AS r
+JOIN ZAPOSLENIK AS z
+ON z.ID_ZAPOSLENIKA = r.ID_ZAPOSLENIKA
+WHERE r.rang = 1
+ORDER BY
+r.godina,
+r.mjesec,
+z.ID_ZAPOSLENIKA;
