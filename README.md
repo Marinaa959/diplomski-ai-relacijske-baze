@@ -1,10 +1,8 @@
 # Elektronički prilog uz diplomski rad
 
-Ovaj repozitorij sadrži elektronički prilog uz diplomski rad
-„Primjena AI alata u oblikovanju relacijskih baza podataka”.
+Ovaj repozitorij sadrži elektronički prilog uz diplomski rad *Primjena AI alata u oblikovanju relacijskih baza podataka* autorice Marine Matešić, izrađen 2026. godine na Matematičkom odsjeku Prirodoslovno-matematičkog fakulteta Sveučilišta u Zagrebu.
 
-Skripte su korištene za provjeru izvršivosti generiranih relacijskih
-shema i ispravnosti generiranih SQL upita u sustavu MySQL 8.4.
+Prilog sadržava referentne sheme, kontrolne podatke, generirane implementacije relacijskih shema i generirane SQL upite korištene u istraživanju.
 
 ## Oznake
 
